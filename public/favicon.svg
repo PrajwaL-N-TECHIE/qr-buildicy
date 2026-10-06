@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <rect width="48" height="48" rx="12" fill="#0C0A15"/>
+  <rect x="2" y="2" width="44" height="44" rx="10" stroke="url(#accent)" stroke-width="1.5" stroke-opacity="0.4"/>
+  <!-- Corner 1 -->
+  <rect x="8" y="8" width="13" height="13" rx="3" stroke="#a855f7" stroke-width="2.5"/>
+  <rect x="12" y="12" width="5" height="5" rx="1.5" fill="#c084fc"/>
+  <!-- Corner 2 -->
+  <rect x="27" y="8" width="13" height="13" rx="3" stroke="#a855f7" stroke-width="2.5"/>
+  <rect x="31" y="12" width="5" height="5" rx="1.5" fill="#c084fc"/>
+  <!-- Corner 3 -->
+  <rect x="8" y="27" width="13" height="13" rx="3" stroke="#a855f7" stroke-width="2.5"/>
+  <rect x="12" y="31" width="5" height="5" rx="1.5" fill="#c084fc"/>
+  <!-- Data bits -->
+  <rect x="27" y="27" width="4" height="4" rx="1" fill="#ec4899"/>
+  <rect x="35" y="27" width="5" height="5" rx="1" fill="#a855f7"/>
+  <rect x="27" y="35" width="5" height="5" rx="1" fill="#8b5cf6"/>
+  <rect x="36" y="36" width="4" height="4" rx="1" fill="#38bdf8"/>
+  <defs>
+    <linearGradient id="accent" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#a855f7"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+  </defs>
+</svg>
