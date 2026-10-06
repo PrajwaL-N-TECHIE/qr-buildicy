@@ -136,9 +136,10 @@ export function App() {
   const isCurrentSaved = savedItems.some((item) => item.content === options.rawValue);
 
   return (
-    <div className="min-h-screen bg-[#07070B] text-zinc-100 flex flex-col selection:bg-purple-500/30 selection:text-purple-200">
-      {/* Background ambient radial glow */}
-      <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-purple-600/10 rounded-full blur-[160px] pointer-events-none -z-10" />
+    <div className="min-h-screen bg-[#050507] text-white flex flex-col relative selection:bg-purple-500/30 selection:text-purple-200">
+      {/* Background radial atmosphere & subtle grid matching Buildicy.com */}
+      <div className="fixed inset-0 pointer-events-none bg-[radial-gradient(circle_at_50%_10%,rgba(168,85,247,0.12),transparent_70%)]" />
+      <div className="fixed inset-0 pointer-events-none bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
 
       {/* Header Bar */}
       <Header
@@ -151,14 +152,14 @@ export function App() {
       />
 
       {/* Main Container */}
-      <main className="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
+      <main className="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8 sm:py-10 relative z-10">
         {activeTab === 'generate' ? (
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             {/* Left Column: Form & Styling Studio */}
             <div className="lg:col-span-7 space-y-6">
               {/* Hero Title Banner */}
               <div className="space-y-2">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-xs font-semibold">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/25 text-purple-300 text-xs font-semibold">
                   <Sparkles className="w-3.5 h-3.5 text-purple-400" />
                   <span>Ultra-Precision Vector Generator</span>
                 </div>
@@ -193,19 +194,19 @@ export function App() {
 
               {/* Quick Feature Perks */}
               <div className="mt-6 grid grid-cols-3 gap-3 text-center">
-                <div className="p-3 rounded-xl bg-[#0D0D16]/60 border border-white/5">
+                <div className="p-3 rounded-xl bg-[#0C0C12]/80 border border-purple-500/15">
                   <ShieldCheck className="w-4 h-4 mx-auto text-purple-400 mb-1" />
                   <span className="text-[11px] font-semibold text-zinc-300 block">Error Proof</span>
                   <span className="text-[10px] text-zinc-500">Up to 30% redundancy</span>
                 </div>
 
-                <div className="p-3 rounded-xl bg-[#0D0D16]/60 border border-white/5">
+                <div className="p-3 rounded-xl bg-[#0C0C12]/80 border border-purple-500/15">
                   <Zap className="w-4 h-4 mx-auto text-sky-400 mb-1" />
                   <span className="text-[11px] font-semibold text-zinc-300 block">4K Print Ready</span>
                   <span className="text-[10px] text-zinc-500">Lossless SVG & PNG</span>
                 </div>
 
-                <div className="p-3 rounded-xl bg-[#0D0D16]/60 border border-white/5">
+                <div className="p-3 rounded-xl bg-[#0C0C12]/80 border border-purple-500/15">
                   <Globe2 className="w-4 h-4 mx-auto text-emerald-400 mb-1" />
                   <span className="text-[11px] font-semibold text-zinc-300 block">100% Client-Side</span>
                   <span className="text-[10px] text-zinc-500">Zero data tracking</span>
@@ -237,34 +238,50 @@ export function App() {
         onClearAll={handleClearAllHistory}
       />
 
-      {/* Footer */}
-      <footer className="border-t border-white/5 bg-[#050508] py-8 text-center text-xs text-zinc-500">
-        <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2">
-            <span className="font-bold text-zinc-300">Buildicy QR Studio</span>
-            <span>•</span>
-            <span>qr.buildicy.com</span>
+      {/* Footer matching Buildicy Theme */}
+      <footer className="border-t border-purple-500/15 bg-[#040406] py-10 text-xs text-zinc-400 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div className="flex items-center gap-3">
+            <div className="w-9 h-9 rounded-xl bg-purple-600/15 border border-purple-500/40 flex items-center justify-center p-1.5 shrink-0 shadow-inner">
+              <img src="/logo.png" alt="Buildicy" className="w-full h-full object-contain" />
+            </div>
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="font-black text-white text-base tracking-tight">Buildicy QR</span>
+                <span className="text-[10px] text-purple-400 font-mono font-medium px-2 py-0.5 rounded-full bg-purple-500/10 border border-purple-500/20">
+                  qr.buildicy.com
+                </span>
+              </div>
+              <p className="text-[11px] text-zinc-500">Official Buildicy Venture Product</p>
+            </div>
           </div>
 
-          <div className="flex items-center gap-4 text-zinc-400">
-            <a href="https://buildicy.com" target="_blank" rel="noopener noreferrer" className="hover:text-purple-300 transition-colors">
-              Buildicy Platform
+          <div className="flex items-center gap-6 text-xs text-zinc-400">
+            <a
+              href="https://buildicy.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-purple-300 transition-colors flex items-center gap-1.5"
+            >
+              <span>Buildicy Platform</span>
+              <img src="/logo.png" alt="" className="w-3.5 h-3.5 object-contain opacity-70" />
             </a>
-            <a href="https://forms.buildicy.com" target="_blank" rel="noopener noreferrer" className="hover:text-purple-300 transition-colors">
-              B-Forms
-            </a>
-            <button onClick={() => setIsProjectorOpen(true)} className="hover:text-purple-300 transition-colors">
-              Stage Presentation
+            <button
+              onClick={() => setIsProjectorOpen(true)}
+              className="hover:text-purple-300 transition-colors cursor-pointer"
+            >
+              Auditorium Stage Mode
             </button>
           </div>
 
-          <div>
-            © {new Date().getFullYear()} Buildicy. Designed for high performance.
+          <div className="text-[11px] text-zinc-500">
+            © {new Date().getFullYear()} Buildicy. Built with precision.
           </div>
         </div>
       </footer>
     </div>
   );
+
 }
 
 export default App;

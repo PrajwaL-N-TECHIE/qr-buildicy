@@ -9,7 +9,7 @@ export const LOGO_PRESETS: LogoPreset[] = [
   {
     id: 'buildicy',
     name: 'Buildicy',
-    svgDataUri: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none"><rect width="100" height="100" rx="24" fill="%230F0A1F"/><path d="M26 28h28c11 0 18 6 18 14 0 6-4 10-10 12 8 2 13 8 13 15 0 9-8 15-20 15H26V28zm14 11v12h13c5 0 8-2 8-6s-3-6-8-6H40zm0 21v14h15c5 0 9-3 9-7s-4-7-9-7H40z" fill="%23A855F7"/><circle cx="76" cy="24" r="8" fill="%2338BDF8"/></svg>`,
+    svgDataUri: '/logo.png',
   },
   {
     id: 'link',

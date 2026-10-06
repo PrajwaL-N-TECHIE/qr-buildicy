@@ -171,11 +171,13 @@ export const ProjectorModal: FC<ProjectorModalProps> = ({
       </div>
 
       {/* Bottom Brand Watermark */}
-      <div className="w-full text-center text-xs text-zinc-600 z-10 flex items-center justify-center gap-2">
-        <span>Buildicy QR Studio</span>
+      <div className="w-full text-center text-xs text-zinc-500 z-10 flex items-center justify-center gap-2">
+        <img src="/logo.png" alt="Buildicy" className="w-4 h-4 object-contain inline-block opacity-80" />
+        <span className="font-bold text-zinc-300">Buildicy QR Studio</span>
         <span>•</span>
-        <span>qr.buildicy.com</span>
+        <span className="text-purple-400 font-mono">qr.buildicy.com</span>
       </div>
+
     </div>
   );
 };
