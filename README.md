@@ -55,7 +55,7 @@
 
 ```bash
 # Clone the repository
-git clone https://github.com/PrajwaL-N-TECHIE/b-qr.git
+git clone https://github.com/PrajwaL-N-TECHIE/qr-buildicy.git
 
 # Navigate to project directory
 cd b-qr
